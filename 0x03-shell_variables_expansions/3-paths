@@ -1,2 +1,9 @@
 #!/bin/bash
-echo $(ls -l | grep ^d | wc -l)
+c=0
+IFS=: read -ra p <<< "$PATH"
+for d in "${p[@]}"
+do
+  if [ -z "$d" ]; then d=.; fi
+  if [ -d "$d" ]; then c=$((c+1)); fi
+done
+echo $c
