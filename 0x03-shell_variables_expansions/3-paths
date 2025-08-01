@@ -1,2 +1,2 @@
 #!/bin/bash
-c=0; IFS=: read -ra p <<<"$PATH"; for d in "${p[@]}"; do [ -z "$d" ] && d='.'; [ -d "$d" ] && ((c++)); done; echo $c
+bash -c $'export PATH="$PATH:/action"\n'

@@ -1,2 +1,2 @@
 #!/bin/bash
-for a in {a..z}; do for b in {a..z}; do if [[ $a$b != oo ]]; then echo $a$b; fi; done; done
+bash -c $'for a in {a..z}\ndo\n  for b in {a..z}\n  do\n    if [[ $a$b != oo ]]\n    then\n      echo $a$b\n    fi\ndone\ndone'
