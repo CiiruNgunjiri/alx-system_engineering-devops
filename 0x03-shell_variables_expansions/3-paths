@@ -1,2 +1,2 @@
 #!/bin/bash
-bash -c $'export PATH="$PATH:/action"\n'
+bash -c $'count=0\nIFS=: read -ra dirs <<< "$PATH"\nfor dir in "${dirs[@]}"\ndo\nif [ -z "$dir" ]\nthen\ndir="."\nfi\nif [ -d "$dir" ]\nthen\ncount=$((count+1))\nfi\ndone\necho $count'
