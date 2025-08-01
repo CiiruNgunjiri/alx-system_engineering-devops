@@ -43,6 +43,81 @@ Prints all possible two-letter lowercase combinations from `aa` to `zz`, excludi
 ### 13-print_float  
 Prints the value of the environment variable `NUM` formatted to two decimal places.
 
+### 100-decimal_to_hexadecimal
+Description: Converts a decimal (base 10) number stored in the environment variable DECIMAL to its hexadecimal (base 16) lowercase representation.
+
+Implementation: Uses Bash built-in printf for conversion.
+
+Usage:
+
+bash
+export DECIMAL=1337
+./100-decimal_to_hexadecimal
+# Output: 539
+
+###  101-rot13
+Description: Reads input from standard input and outputs the ROT13-encoded text.
+
+Implementation: Utilizes tr for ASCII text character substitution.
+
+Usage:
+
+bash
+./101-rot13 < inputfile
+
+### 102-odd
+Description: Prints every other line from input, starting with the first line.
+
+Implementation: Uses awk with condition on record number.
+
+Usage:
+
+bash
+ls -1 | ./102-odd
+
+### 103-water_and_stir
+Description: Adds two numbers given in non-standard bases:
+
+WATER is a number in base "water" (w,a,t,e,r).
+
+STIR is a number in base "stir" (s,t,i,r).
+
+Outputs the sum in base "bestchol" (b,e,s,t,c,h,o,l).
+
+Constraints:
+
+No use of &&, ||, ;, sed, or bc.
+
+Pure Bash with built-in arithmetic.
+
+Strict checking of digit validity.
+
+Provided as a strictly 2-line script using embedded multi-line logic via bash -c.
+
+Important:
+
+The input variables must only contain valid characters from their respective digit sets.
+
+Invalid characters (e.g., . in STIR) will cause the script to error out.
+
+Usage:
+
+bash
+export WATER="ewwatratewa"
+export STIR="tiitirtrtr"  # Ensure only valid digits present
+./103-water_and_stir
+
+## General Notes
+All scripts are designed to be portable and conform to strict shell scripting standards suitable for system engineering tasks.
+
+Explicitly avoid forbidden operators to ensure simple, maintainable, and portable shell code.
+
+Use executable permissions where necessary:
+
+bash
+chmod +x script_name
+Input validation is performed where applicable to ensure meaningful error messages.
+
 ## Requirements and Constraints
 
 - All scripts include the shebang `#!/bin/bash` as the first line.
