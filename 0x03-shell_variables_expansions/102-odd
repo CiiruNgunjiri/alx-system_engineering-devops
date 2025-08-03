@@ -1,3 +1,2 @@
 #!/bin/bash
 bash -c $'count=1\nwhile IFS= read -r line\n do\n  if [ $((count % 2)) -eq 1 ]\n  then\n    echo "$line"\n  fi\n  count=$((count + 1))\ndone'
-
